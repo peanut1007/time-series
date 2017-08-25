@@ -1,0 +1,5 @@
+## how to extract the time and clean it.
+
+df2$Time <- gsub(':', '', as.matrix(df2$Time))
+df2$Time <- gsub('^([0-9]{2})([0-9]+)$', '00:\\1:\\2', as.matrix(df2$Time))
+df2$Time <- as.POSIXct(df2$Time, format="%H:%M:%S")
